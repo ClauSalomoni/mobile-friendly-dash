@@ -1,0 +1,12 @@
+# Lixos do Sistema Operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Arquivos de configuração do VS Code
+.vscode/
+*.code-workspace
+
+# Logs e arquivos temporários
+*.log
+.eslintcache

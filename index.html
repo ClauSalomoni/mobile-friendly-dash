@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Dados - Transparência Municipal</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body, html { width: 100%; height: 100%; overflow: hidden; background-color: #f4f4f4; }
+        
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* O segredo da responsividade está aqui */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Se a tela for de celular, limitamos a largura para forçar o Power BI a entender o Mobile Layout */
+        @media (max-width: 768px) {
+            iframe {
+                width: 100vw;
+                height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <iframe title="analise_despesas_publicas_PMSJ _Mobile" width="100%" height="100%" src="https://app.powerbi.com/view?r=eyJrIjoiNjhjYzNmMzUtODFkZC00YWVmLThjZDUtNWRjMmNlYjQ5ZDE1IiwidCI6IjJjZjdkNGQ1LWJkMWItNDk1Ni1hY2Y4LTI5OTUzOTliMjE2OCJ9&pageName=19ee643d11054688c364&pageView=oneColumn" frameborder="0" allowFullScreen="true"></iframe>
+    </div>
+
+</body>
+</html>
