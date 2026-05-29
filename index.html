@@ -23,11 +23,21 @@
             border: none;
         }
 
-        /* Se a tela for de celular, limitamos a largura para forçar o Power BI a entender o Mobile Layout */
         @media (max-width: 768px) {
-            iframe {
+            .wrapper {
+                position: relative;
                 width: 100vw;
                 height: 100vh;
+                overflow: hidden;
+            }
+            iframe {
+                /* Forçamos o iFrame a achar que está em uma tela estreita de celular */
+                width: 400px !important; 
+                height: 100% !important;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
     </style>
