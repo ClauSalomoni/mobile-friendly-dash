@@ -3,88 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Portfólio de Dados - Transparência Municipal</title>
+    <title>Dashboard Mobile - Portal Transparência</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body, html { width: 100%; height: 100%; overflow: hidden; background-color: #0f172a; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #f6f6f6; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
         
-        .screen-container {
-            width: 100vw;
+        .dash-container {
+            position: relative;
+            width: 100%;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
         }
-
-        /* 💻 ESTILO PARA DESKTOP (Computador comum) */
-        .desktop-view {
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
-        .desktop-view iframe {
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             border: none;
-        }
-
-        /* 📱 ESTILO BLINDADO PARA CELULAR (Força o redimensionamento matemático) */
-        .mobile-view {
-            display: none;
-            width: 360px; /* Largura padrão exata de viewport mobile */
-            height: 640px; /* Altura padrão exata */
-            position: relative;
-        }
-
-        @media (max-width: 768px) {
-            .desktop-view { display: none !important; }
-            .mobile-view { 
-                display: block !important; 
-                /* O segredo: Tiramos o controle do navegador e escalamos via hardware gráfico */
-                transform: scale(1.1); 
-                transform-origin: center center;
-            }
-            .mobile-view iframe {
-                width: 100% !important;
-                height: 100% !important;
-                border: none;
-            }
         }
     </style>
 </head>
 <body>
 
-    <div class="screen-container">
-        
-        <div class="desktop-view">
-            <iframe title="analise_despesas_publicas_PMSJ _Mobile" width="100%" height="100%" src="https://app.powerbi.com/view?r=eyJrIjoiNjhjYzNmMzUtODFkZC00YWVmLThjZDUtNWRjMmNlYjQ5ZDE1IiwidCI6IjJjZjdkNGQ1LWJkMWItNDk1Ni1hY2Y4LTI5OTUzOTliMjE2OCJ9&pageName=19ee643d11054688c364" frameborder="0" allowFullScreen="true"></iframe>
-        </div>
-
-        <div class="mobile-view">
-            <iframe title="analise_despesas_publicas_PMSJ _Mobile" width="100%" height="100%" src="https://app.powerbi.com/view?r=eyJrIjoiNjhjYzNmMzUtODFkZC00YWVmLThjZDUtNWRjMmNlYjQ5ZDE1IiwidCI6IjJjZjdkNGQ1LWJkMWItNDk1Ni1hY2Y4LTI5OTUzOTliMjE2OCJ9&pageName=19ee643d11054688c364&pageView=oneColumn&chromeless=1" frameborder="0" allowFullScreen="true"></iframe>
-        </div>
+    <div class="dash-container">
+        <iframe title="analise_despesas_publicas_PMSJ _Mobile" width="100%" height="100%" src="https://app.powerbi.com/view?r=eyJrIjoiNjhjYzNmMzUtODFkZC00YWVmLThjZDUtNWRjMmNlYjQ5ZDE1IiwidCI6IjJjZjdkNGQ1LWJkMWItNDk1Ni1hY2Y4LTI5OTUzOTliMjE2OCJ9&pageName=19ee643d11054688c364&phoneView=true&appSource=Chromeless" frameborder="0" allowFullScreen="true">
 
     </div>
 
-    <script>
-        // Garante que se o usuário entrar por um celular de altíssima resolução, 
-        // o JavaScript intercepta e força o ajuste de escala matemática na marra
-        function ajustarLayoutMobile() {
-            if (window.innerWidth <= 768) {
-                const mobileBox = document.querySelector('.mobile-view');
-                if (mobileBox) {
-                    const escalaX = window.innerWidth / 360;
-                    const escalaY = window.innerHeight / 640;
-                    // Usa a menor escala para garantir que o painel caiba inteiro sem cortar nada
-                    const escalaFinal = Math.min(escalaX, escalaY) * 0.95; 
-                    mobileBox.style.transform = `scale(${escalaFinal})`;
-                }
-            }
-        }
-
-        window.addEventListener('resize', ajustarLayoutMobile);
-        window.addEventListener('DOMContentLoaded', ajustarLayoutMobile);
-    </script>
 </body>
 </html>

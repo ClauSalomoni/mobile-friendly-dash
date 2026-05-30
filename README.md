@@ -37,14 +37,13 @@ Para resolver o problema sem onerar o projeto com licenças corporativas caras (
 
 ## 📈 Evolução do Design (Antes vs. Depois)
 
-> 💡 *Dica: Substitua as imagens abaixo pelos prints reais do seu projeto dentro da pasta assets.*
 
 ### Layout Desktop Refatorado (Foco em Narrativa)
 <kbd>
   <img src="assets/Dash_Desktop.png" alt="Layout Desktop V2" width="100%">
 </kbd>
 
-### Layout Mobile Nativo Forçado via Web Wrapper
+### Layout Mobile Nativo Forçado via Web Wrapper - expectativa
 <p align="center">
   <kbd>
     <img src="assets/Dash_Mobile.png" alt="Layout Mobile V2" width="300px">
